@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>| DEEPFAKE CREATION & DETECTION USING CYCLE GAN's |</title>
+		<link rel="stylesheet" href="{% static '/css/style.css' %}" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+		/>
+	</head>
+	<body>
+		<header class="header">
+			<a href="#" class="logo"
+				><i class="fas fa-brain"></i>
+				<span>D</span>eep<span>F</span>ake</a
+			>
+			<div class="fas fa-bars"></div>
+			<!-- Navbar Begin -->
+			<nav class="navbar">
+				<ul>
+					<li><a href="{%url 'ml_app:home'%}">Home</a></li>
+					<li><a href="#about">About</a></li>
+					<!-- <li><a href="{%url 'ml_app:about'%}">About</a></li> -->
+					<li><a href="#team">Team</a></li>
+				</ul>
+			</nav>
+		</header>
+
+		<!-- Header section Begin -->
+		<section id="home" class="home">
+			<h1 class="banner">
+				Deepfake Creation and Detection using Cycle GAN<span>s</span>
+			</h1>
+			<h3 class="slogan">Final Year Project</h3>
+			<div class="wave wav1"></div>
+			<div class="wave wave2"></div>
+			<div class="wave wave3"></div>
+			<div class="fas fa-cog nut1 anim"></div>
+			<div class="fas fa-cog nut2 anim"></div>
+		</section>
+		<!-- End Header section -->
+
+		<!-- About section Begin -->
+
+		<section id="about" class="about">
+			<h1 class="heading">About</h1>
+			<div class="row">
+				<div class="content">
+					<h3 class="title">
+						Deepfake Creation and detection using cycle gan<span
+							>s</span
+						>
+					</h3>
+					<p class="desc">
+						Deepfake (stemming from “deep learning” and “fake”) is a technique that can superimpose face images of a target person to a video of a source person to create a video of the target person doing or saying things the source person does. The underlying mechanism for deepfake creation is deep learning models such as autoencoders and generative adversarial networks, which have been applied widely in the computer vision domain
+					</p>
+					<a href="#"><button class="btn">Read More</button></a>
+				</div>
+				<div class="image">
+					<img src="{% static 'images/0.svg' %}" alt="" />
+				</div>
+			</div>
+		</section>
+
+		<!-- End About section -->
+
+		<!-- Project section Begin -->
+
+		<section id="project" class="project">
+			<h1 class="heading">Our Project</h1>
+			<!-- Creation part Begin-->
+			<div class="row">
+				<div class="image">
+					<img src="{% static 'images/cre.svg' %}" alt="" />
+				</div>
+				<div class="content">
+					<h2 class="title">
+						<i class="fas fa-brain"></i> Deepfake Creation
+					</h2>
+					<p class="desc">
+						Deepfakes exploit this human tendency using generative adversarial networks (GANs), in which two machine learning (ML) models duke it out. One ML model trains on a data set and then creates video forgeries, while the other attempts to detect the forgeries.
+					</p>
+					<a
+						href="https://colab.research.google.com/drive/1h222BwCTGQdN4gb7ZLOmpOnSjObPgmIL#scrollTo=d8kQ3U7MHqh-"
+						><button class="btn">Explore</button></a
+					>
+				</div>
+			</div>
+			<!-- End Creation part -->
+
+			<!-- Detection part Begin -->
+			<div class="row">
+				<div class="content">
+					<h2 class="title">
+						Deepfake Detection <i class="fas fa-brain"></i>
+					</h2>
+					<p class="desc">
+						Deepfakes use deep learning artificial intelligence to replace the likeness of one person with another in video and other digital media. There are concerns that deepfake technology can be used to create fake news and misleading, counterfeit videos.
+					</p>
+					<a href="{%url 'ml_app:detection'%}"
+						><button class="btn">Explore</button></a
+					>
+				</div>
+				<div class="image">
+					<img src="{% static 'images/02.svg' %}" alt="" />
+				</div>
+			</div>
+			<!-- End Detection part -->
+		</section>
+
+		<!-- End Project section -->
+
+		<!-- Team section Begin -->
+
+		<section id="team" class="team">
+			<h1 class="heading">Our team</h1>
+
+			<!-- person 1 -->
+
+			<div class="container">
+				<div class="card" data-tilt data-tilt-axis="x">
+					<div class="content">
+						<div class="imgBx">
+							<img src="{% static 'images/ck.png' %}" alt="" />
+						</div>
+						<div class="contentBx">
+							<h3 class="title">CHARAN K</h3>
+							<span>1RI16CS013</span> <br />
+							<span>8th SEM</span> <br />
+							<span>DEPT. OF COMPUTER SCIENCE</span> <br />
+							<span>R.R INSTITUTE OF TECHNOLOGY</span> <br />
+						</div>
+					</div>
+					<ul class="sci">
+						<li style="--i: 1">
+							<a href="#" class="fab fa-facebook"></a>
+						</li>
+						<li style="--i: 2">
+							<a href="#" class="fab fa-github"></a>
+						</li>
+						<li style="--i: 3">
+							<a href="#" class="fas fa-envelope"></a>
+						</li>
+					</ul>
+				</div>
+
+				<!-- person 2 -->
+
+				<div class="card" data-tilt data-tilt-axis="x">
+					<div class="content">
+						<div class="imgBx">
+							<img src="{% static 'images/na.jpg' %}" alt="" />
+						</div>
+						<div class="contentBx">
+							<h3 class="title">AHMED NAVEED</h3>
+							<span>1RI17CS027</span> <br />
+							<span>8th SEM</span> <br />
+							<span>DEPT. OF COMPUTER SCIENCE</span> <br />
+							<span>R.R INSTITUTE OF TECHNOLOGY</span> <br />
+						</div>
+					</div>
+					<ul class="sci">
+						<li style="--i: 1">
+							<a href="#" class="fab fa-facebook"></a>
+						</li>
+						<li style="--i: 2">
+							<a href="#" class="fab fa-github"></a>
+						</li>
+						<li style="--i: 3">
+							<a href="#" class="fas fa-envelope"></a>
+						</li>
+					</ul>
+				</div>
+
+				<!-- person 3 -->
+
+				<div class="card" data-tilt data-tilt-axis="x">
+					<div class="content">
+						<div class="imgBx">
+							<img
+								src="{% static 'images/sa.jpg' %}"
+								alt=""
+							/>
+						</div>
+						<div class="contentBx">
+							<h3 class="title">SHANKAR R A</h3>
+							<span>1RI17CS043</span> <br />
+							<span>8th SEM</span> <br />
+							<span>DEPT. OF COMPUTER SCIENCE</span> <br />
+							<span>R.R INSTITUTE OF TECHNOLOGY</span> <br />
+						</div>
+					</div>
+					<ul class="sci">
+						<li style="--i: 1">
+							<a href="#" class="fab fa-facebook"></a>
+						</li>
+						<li style="--i: 2">
+							<a href="#" class="fab fa-github"></a>
+						</li>
+						<li style="--i: 3">
+							<a href="#" class="fas fa-envelope"></a>
+						</li>
+					</ul>
+				</div>
+
+				<!-- person 4 -->
+
+				<div class="card" data-tilt data-tilt-axis="x">
+					<div class="content">
+						<div class="imgBx">
+							<img src="{% static 'images/NI.jpg' %}" alt="" />
+						</div>
+						<div class="contentBx">
+							<h3 class="title">NIKITH KUMAR N</h3>
+							<span>1RI17CS028</span> <br />
+							<span>8th SEM</span> <br />
+							<span>DEPT. OF COMPUTER SCIENCE</span> <br />
+							<span>IISC</span> <br />
+						</div>
+					</div>
+					<ul class="sci">
+						<li style="--i: 1">
+							<a href="#" class="fab fa-facebook"></a>
+						</li>
+						<li style="--i: 2">
+							<a href="#" class="fab fa-github"></a>
+						</li>
+						<li style="--i: 3">
+							<a href="#" class="fas fa-envelope"></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</section>
+		<!-- End Team section -->
+
+		<!-- Footer section Begin -->
+
+		<section class="footer">
+			<p class="text-center">
+				Designed and built with
+				<span class="icon"><i class="fa fa-heart fa-lg"></i></span> by<a
+					href=""
+					target="_blank"
+				>
+					The Team Squad-X</a
+				>
+			</p>
+			<div class="icons">
+				<a href="#" class="fab fa-github"></a>
+				<a href="#" class="fab fa-linkedin"></a>
+				<a href="#" class="fab fa-twitter"></a>
+				<a href="#" class="fas fa-envelope"></a>
+			</div>
+		</section>
+
+		<!-- Footer section Begin -->
+
+		<!-- js -->
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script
+			type="text/javascript"
+			src="{% static '/js/vanilla-tilt.js' %}"
+		></script>
+		<script>
+			VanillaTilt.init(document.querySelectorAll(".card"), {
+				max: 25,
+				speed: 400,
+			});
+		</script>
+		<script src="{% static '/js/main.js' %}"></script>
+	</body>
+</html>

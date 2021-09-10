@@ -1,0 +1,125 @@
+{% extends 'base.html' %} {%load static%} {%block content%}
+
+<!-- navbar -->
+<header class="header">
+	<a href="#" class="logo"
+		><i class="fas fa-brain"></i> <span>D</span>eep<span>F</span>ake</a
+	>
+	<div class="fas fa-bars"></div>
+	<!-- Navbar Begin -->
+	<nav class="navbar">
+		<ul>
+			<li><a href="{%url 'ml_app:home'%}">Home</a></li>
+		</ul>
+	</nav>
+</header>
+<!-- end navbar -->
+
+<!-- home page animation -->
+<section id="home" class="home">
+	<div class="wave wav1"></div>
+	<div class="wave wave2"></div>
+	<div class="wave wave3"></div>
+	<div class="fas fa-cog nut1 anim"></div>
+	<div class="fas fa-cog nut2 anim"></div>
+	<!-- video box -->
+	<div class="vid_box">
+		<div class="container">
+			<div class="row align-items-center justify-content-center">
+				<div class="col-12 my-auto">
+					<div class="main_title text-center mb-3">
+						DEEPFAKE DETECTION
+					</div>
+					<div class="width-400">
+						<video width="100%" controls id="videos">
+							<source src="" id="video_source" />
+							Your browser does not support HTML5 video.
+						</video>
+						<form
+							class="form"
+							method="POST"
+							enctype="multipart/form-data"
+							name="video-upload"
+							id="video-upload"
+							class="text-center mt-3"
+						>
+							{%csrf_token%}
+							<div class="form-group">
+								<label>{{form.upload_video_file.widget}}</label>
+								{{form.upload_video_file}}
+								<!-- <input type="file" id="{{form.upload_video_file.id_for_label}}" name="{{form.upload_video_file.name}}" /> -->
+								{%if form.upload_video_file.errors%} {%for
+								each_error in form.upload_video_file.errors%}
+								<div
+									class="alert alert-danger mt-1 {{form.upload_video_file.id_for_label}}"
+								>
+									{{each_error}}
+								</div>
+								{%endif%}
+							</div>
+							<div class="form-group">
+								<label
+									for="{{form.sequence_length.id_for_label}}"
+									class="slider_value"
+									>{{form.sequence_length.label}}: </label
+								><span id="slider-value"></span>
+								<input
+									type="number"
+									hidden="hidden"
+									id="{{form.sequence_length.id_for_label}}"
+									name="{{form.sequence_length.name}}"
+								/>
+								<div id="slider" class="slider"></div>
+								{%if form.sequence_length.errors%} {%for
+								each_error in form.sequence_length.errors%}
+								<div
+									class="alert alert-danger mt-1 {{form.sequence_length.id_for_label}}"
+								>
+									{{each_error}}
+								</div>
+								{%endif%}
+							</div>
+							<button
+								id="videoUpload"
+								type="submit"
+								name="submit"
+								class="upload_btn btn-success mt-3 btn-block"
+							>
+								Upload
+							</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+{%endblock%} {%block js_cripts%} {%include 'footer.html'%}
+<script src="{% static '/js/main.js' %}"></script>
+<script src="{% static '/js/script.js' %}"></script>
+<script>
+	$(function () {
+		var sliderSequenceNumbers = [10, 20, 40, 60, 80, 100];
+		var slider = $("div#slider").slider({
+			value: 1,
+			min: 0,
+			max: sliderSequenceNumbers.length - 1,
+			slide: function (event, ui) {
+				$("#{{form.sequence_length.id_for_label}}").val(
+					sliderSequenceNumbers[ui.value],
+				);
+				$("#{{form.sequence_length.id_for_label}}").val(
+					sliderSequenceNumbers[ui.value],
+				);
+				$("#slider-value").html(sliderSequenceNumbers[ui.value]);
+			},
+		});
+		$("#{{form.sequence_length.id_for_label}}").val(
+			sliderSequenceNumbers[$("#slider").slider("value")],
+		);
+		$("#slider-value").html(
+			sliderSequenceNumbers[$("#slider").slider("value")],
+		);
+	});
+</script>
+{%endblock%}
